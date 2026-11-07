@@ -890,34 +890,28 @@ should therefore be verified in the repository before submission.
 
 ---
 
-## 17. Current status at the end of the available conversation
+## 17. Status update after the recorded conversation
 
-The last full-suite output available in this transcript is **22 passed
-in 2.54 seconds**. The three bug descriptions and regression identifiers
-above come from the project's bug notes supplied during the
-conversation. The evaluation cases named there have not been shown in a
-terminal result in the available conversation.
+The transcript above preserves the development exchanges available when
+it was assembled. The following later project status is an editorial
+update, not a verbatim transcript of additional prompts or terminal
+output:
 
-The following assignment work was still awaiting implementation or
-verification at the end of the available conversation:
+- The full test suite was subsequently reported as **50 passed**.
+- The generated evaluation file contains **27 scenarios, all marked
+  PASS**, with scenario, expected, actual, pass/fail, and notes columns.
+- The timeout-after-success raw trace is present at
+  `outputs/timeout_after_success_trace.json`.
+- The design note and three-bug report are present at `docs/DESIGN.md`
+  and `docs/BUGS.md`.
+- A Loom demo link was supplied for the submission. Its availability
+  was not independently verified here.
 
-- Complete proactive provider-cancellation workflow.
-- Verify the 50-memory seed and long conversation fixture.
-- Verify the fixed context budget and exact context audit log.
-- Run the assignment evaluation scenarios, including the three bug
-  regressions.
-- Generate the evaluation table from test execution.
-- Save the raw timeout-after-success trace and annotate it in
-  `docs/DESIGN.md`.
-- Verify the three bug descriptions and their regression tests against
-  the actual files.
-- Record the 3--5 minute end-to-end demo.
-- Finish and verify the README last.
-
-_This transcript stops at the last development exchange available for
-this document. It should be extended with the actual prompts, code
-changes, command outputs and test results as the remaining work is
-completed. Do not add future work as if it had already happened._
+The earlier status and pending-work checklist in this transcript
+described an intermediate stage and is superseded by this update. The
+transcript remains an edited, non-verbatim account; this update does not
+reconstruct missing conversation turns or claim to be a complete raw
+chat log.
 
 ---
 
