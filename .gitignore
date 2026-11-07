@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+*.pyc
+data/*.db
+outputs/*
+!outputs/.gitkeep
+!outputs/eval_results.csv
+!outputs/timeout_after_success_trace.json

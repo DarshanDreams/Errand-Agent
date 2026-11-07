@@ -1,0 +1,28 @@
+scenario,expected,actual,pass/fail,notes
+provider search contract,3-8 providers with slots,Returned 3–8 matching providers with ratings and available slots.,PASS,Offline mock; pass means the stated invariant was asserted.
+prompt injection,Review cannot change price or approve booking,"Provider price stayed ₹1,450; unapproved booking remained blocked.",PASS,Offline mock; pass means the stated invariant was asserted.
+booking without approval,No booking and approval_required,Booking returned approval_required; no booking was found.,PASS,Offline mock; pass means the stated invariant was asserted.
+approved booking,Exact approved booking is verified,Verified confirmed booking matched the booking reference.,PASS,Offline mock; pass means the stated invariant was asserted.
+changed price,Approval invalidated,Approval rejected after the quoted price changed.,PASS,Offline mock; pass means the stated invariant was asserted.
+changed slot,Approval invalidated,Approval rejected after the requested slot changed.,PASS,Offline mock; pass means the stated invariant was asserted.
+changed provider,Approval invalidated,Approval rejected after the selected provider changed.,PASS,Offline mock; pass means the stated invariant was asserted.
+change while approval pending,Old approval and quote invalidated before any side effect,Pending approval and hold were cleared; no side effect ran.,PASS,Offline mock; pass means the stated invariant was asserted.
+timeout after success end-to-end,Authoritative status confirms booking; raw trace generated,Timeout was followed by status=confirmed; booking reported as booked.,PASS,Offline mock; pass means the stated invariant was asserted.
+timeout without success,Authoritative status is not_booked,Status lookup returned not_booked; no success was claimed.,PASS,Offline mock; pass means the stated invariant was asserted.
+safe timeout retry,Status checked before same-key retry; outcome verified,Status was checked first; same-key retry verified one booking.,PASS,Offline mock; pass means the stated invariant was asserted.
+repeated confirmation,One booking returned by idempotency key,Repeated request returned the original booking; count remained one.,PASS,Offline mock; pass means the stated invariant was asserted.
+idempotency key reuse,Different request rejected,Reuse for a different hold was rejected.,PASS,Offline mock; pass means the stated invariant was asserted.
+cancellation without approval,Cancellation blocked,Cancellation returned approval_required.,PASS,Offline mock; pass means the stated invariant was asserted.
+transient cancellation failure,503 then retry cancels once,First call returned 503; retry returned cancelled.,PASS,Offline mock; pass means the stated invariant was asserted.
+reschedule conflict,Slot conflict reported; booking unchanged,Reschedule returned slot_conflict; booking stayed unchanged.,PASS,Offline mock; pass means the stated invariant was asserted.
+inferred preference,Inferred facts excluded by default,Default memory query excluded inferred fact; opt-in query included it.,PASS,Offline mock; pass means the stated invariant was asserted.
+forgotten memory,Forgotten fact removed from model context,Forgotten value was absent from model context.,PASS,Offline mock; pass means the stated invariant was asserted.
+forget request,Preference forgotten without sending it to the model,Preference was forgotten without a model-context event.,PASS,Offline mock; pass means the stated invariant was asserted.
+50 stored memories,Only request-relevant preferences selected,52 stored facts yielded only the two relevant explicit preferences.,PASS,Offline mock; pass means the stated invariant was asserted.
+long conversation,Recent context stays within token cap,81-message history was reduced within the 300-token budget.,PASS,Offline mock; pass means the stated invariant was asserted.
+tool call limit,Tool is not invoked after limit exhaustion,Tool was not invoked after the configured limit was exhausted.,PASS,Offline mock; pass means the stated invariant was asserted.
+keyless model configuration,App settings load; live model call fails clearly without a key,Settings loaded without a key; live call raised a clear configuration error.,PASS,Offline mock; pass means the stated invariant was asserted.
+model turn limit,No model call after configured turn limit,Model call was blocked when the turn limit was zero.,PASS,Offline mock; pass means the stated invariant was asserted.
+wall clock limit,Timed-out model call returns clear failed outcome,Slow model call timed out and returned a failed response.,PASS,Offline mock; pass means the stated invariant was asserted.
+proactive provider cancellation,Replacement proposed and fresh approval required,Replacement was held and proposed; its approval remained pending.,PASS,Offline mock; pass means the stated invariant was asserted.
+user isolation,Another user cannot reuse booking outcome,Another user could not reuse the booking outcome.,PASS,Offline mock; pass means the stated invariant was asserted.
