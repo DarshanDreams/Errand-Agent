@@ -66,13 +66,5 @@ run generates:
 
 SQLite data is stored in `data/errand_agent.db`. To inspect traces in the
 SQLite Explorer, open the `trace_browser` view; it shows the newest records
-first in local time and limits argument/result previews to keep the columns readable. The
-original complete records remain in the `traces` table. The design trade-offs and trace
-annotation are in [docs/DESIGN.md](docs/DESIGN.md); observed bugs and regression
-tests are in [docs/BUGS.md](docs/BUGS.md). The assistant build-session record is
-in [docs/CODING_ASSISTANT_TRANSCRIPT.md](docs/CODING_ASSISTANT_TRANSCRIPT.md).
+first in local time and limits argument/result previews to keep the columns readable.
 
-The requested 3–5 minute screen recording cannot be created from this
-non-interactive workspace. Use the timeout-after-success evaluation flow as a
-recording script: run the API beside its trace file, complete provider/slot
-selection, approve, and show that the agent verifies status after the timeout.
